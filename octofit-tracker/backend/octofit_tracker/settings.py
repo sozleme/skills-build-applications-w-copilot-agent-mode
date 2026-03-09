@@ -1,3 +1,5 @@
+# Ensure Django uses the original host from the proxy (Codespace)
+USE_X_FORWARDED_HOST = True
 """
 Django settings for octofit_tracker project.
 
