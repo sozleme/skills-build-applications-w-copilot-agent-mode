@@ -33,10 +33,10 @@ def api_root(request, format=None):
     # Use the request's host to build the base URL
     base_url = request.build_absolute_uri('/')[:-1]
     return Response({
-        'users': f"{base_url}api/users/",
-        'teams': f"{base_url}api/teams/",
-        'activities': f"{base_url}api/activities/",
-        'workouts': f"{base_url}api/workouts/",
+        'users': f"{base_url}/api/users/",
+        'teams': f"{base_url}/api/teams/",
+        'activities': f"{base_url}/api/activities/",
+        'workouts': f"{base_url}/api/workouts/",
         'leaderboards': f"{base_url}api/leaderboards/",
     })
 
