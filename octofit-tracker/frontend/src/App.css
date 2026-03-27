@@ -1,0 +1,78 @@
+.app-shell {
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.16), transparent 28%),
+    linear-gradient(180deg, #f4f7fb 0%, #ecf2f9 100%);
+  color: #1f2933;
+}
+
+.app-navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.navbar-brand {
+  letter-spacing: 0.05em;
+}
+
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.76);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar .nav-link.active {
+  color: #0d6efd;
+  background-color: #ffffff;
+}
+
+.hero-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(232, 240, 255, 0.96) 100%),
+    linear-gradient(135deg, #ffffff 0%, #eef4ff 100%);
+  border-radius: 1.5rem;
+}
+
+.resource-panel,
+.section-card {
+  border-radius: 1.25rem;
+}
+
+.section-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+}
+
+.resource-table thead th {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.resource-table tbody td {
+  vertical-align: middle;
+}
+
+.resource-table tbody tr:hover {
+  --bs-table-bg-state: rgba(13, 110, 253, 0.04);
+}
+
+.modal-backdrop {
+  z-index: 1040;
+}
+
+.modal {
+  z-index: 1050;
+}
+
+@media (max-width: 767.98px) {
+  .hero-card,
+  .resource-panel,
+  .section-card {
+    border-radius: 1rem;
+  }
+}
