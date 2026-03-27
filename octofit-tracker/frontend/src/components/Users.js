@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import { getApiUrl } from '../utils/api';
 import ResourcePage from './ResourcePage';
 
-const endpoint = getApiUrl('users');
+const CODESPACE_NAME = process.env.REACT_APP_CODESPACE_NAME;
+const endpoint = CODESPACE_NAME
+  ? `https://${CODESPACE_NAME}-8000.app.github.dev/api/users/`
+  : 'http://localhost:8000/api/users/';
 
 const columns = [
   { key: 'id', label: 'ID', headerClassName: 'text-nowrap' },
