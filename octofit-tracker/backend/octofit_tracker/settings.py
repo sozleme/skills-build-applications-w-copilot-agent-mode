@@ -34,6 +34,17 @@ if CODESPACE_NAME:
     ALLOWED_HOSTS.append(f'{CODESPACE_NAME}-8000.app.github.dev')
     ALLOWED_HOSTS.append(CODESPACE_NAME)
 
+frontend_origin = 'http://localhost:3000'
+backend_origin = 'http://localhost:8000'
+trusted_origins = [frontend_origin, backend_origin]
+allowed_origins = [frontend_origin, backend_origin]
+
+if CODESPACE_NAME:
+    frontend_origin = f'https://{CODESPACE_NAME}-3000.app.github.dev'
+    backend_origin = f'https://{CODESPACE_NAME}-8000.app.github.dev'
+    trusted_origins.extend([frontend_origin, backend_origin])
+    allowed_origins.extend([frontend_origin, backend_origin])
+
 
 # Application definition
 
@@ -97,10 +108,11 @@ DATABASES = {
     }
 }
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = allowed_origins
+CSRF_TRUSTED_ORIGINS = trusted_origins
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = ['*']
-CORS_ALLOW_METHODS = ['*']
+CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
 
 
 # Password validation
